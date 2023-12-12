@@ -71,7 +71,7 @@ face-recognition-opencv/
 ```
 
 ## Example
-![Alt text](image.png)
+![Alt text](data/example.png)
 ## Credits
 
 - This project was created by [Mohamed Hamed](https://github.com/MohamedHamed12)
