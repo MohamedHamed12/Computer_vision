@@ -36,7 +36,7 @@ cd Computer_vision/detect_words
 3. Run the script with the following command:
 
 ```bash
-python script_name.py [input_path] [output_path]
+python detect_words.py [input_path] [output_path]
 
 ```
 
@@ -53,3 +53,4 @@ This script was created by [Mohamed Hamed](https://github.com/MohamedHamed12)
 This script is licensed under the [MIT license](LICENSE.txt).
 
 ![Alt text](data/image.png)
+
