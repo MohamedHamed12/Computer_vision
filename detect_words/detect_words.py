@@ -41,7 +41,7 @@ class DetectImage:
 
         return thresh
 
-    def show_contours(self, contours):
+    def show_contours(self, contours, name):
         img=self.img.copy()
         for ctr in contours:
             
@@ -50,7 +50,7 @@ class DetectImage:
             
         cv.imshow('img', img); cv.waitKey(0)
         #save image
-        cv.imwrite( self.output_path + '/' + os.path.basename(self.image_path), img)
+        cv.imwrite( self.output_path + '/'  + name+'_' + os.path.basename(self.image_path) , img)
 
     def get_lines(self,thresh):
 
@@ -61,7 +61,7 @@ class DetectImage:
 
         (contours, heirarchy) = cv.findContours(morph_img.copy(), cv.RETR_EXTERNAL, cv.CHAIN_APPROX_NONE)
         sorted_contours_lines = sorted(contours, key = lambda ctr : cv.boundingRect(ctr)[1]) 
-        self.show_contours( sorted_contours_lines)
+        self.show_contours( sorted_contours_lines, 'lines')
 
 
 
@@ -76,7 +76,7 @@ class DetectImage:
 
         sorted_contours_words = sorted(contours, key = lambda ctr : cv.boundingRect(ctr)[0]) 
 
-        self.show_contours( sorted_contours_words)                  
+        self.show_contours( sorted_contours_words, 'words')                  
 
     
   
@@ -91,7 +91,11 @@ def main():
     if len(sys.argv) > 2:
         output_path = sys.argv[2]
     else:
+
+        #make output folder
         output_path = default_output_path
+        if not os.path.exists(output_path):
+            os.makedirs(output_path)
 
 
     # get list of images

@@ -1,4 +1,4 @@
-# Image Detection Readme
+# Image Detection 
 
 This Python script provides a simple image processing tool for detecting and highlighting lines and words in images. It uses the OpenCV library for image processing and Matplotlib for displaying the results.
 
